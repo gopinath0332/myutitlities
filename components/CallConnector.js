@@ -4,50 +4,67 @@ import {
     NativeModules,
     NativeEventEmitter,
     Text,
-    View
+    View,
+    ListView,
+    Vibration,
+    Button
 } from 'react-native';
 
-const {
-    CallDetectionManager
-} = NativeModules;
+import CallDetector from 'react-native-call-detector';
 
 
 export default class CallConnector extends Component {
     constructor(args) {
         super(args);
+        this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
         this.state = {
             connected: false,
-            log: ["intial"]
+            log: ["initial"]
         };
 
     }
 
     componentWillMount() {
-        // initiate listener 
-        // CallDetectionManager && CallDetectionManager.startListener();
-        // this.eventObj = new NativeEventEmitter(CallDetectionManager);
-        // this.eventObj.addListener("PhoneCallStateUpdate", (event) => {
-        //     this.setState({
-        //         log: [...state.log, event]
-        //     });
-        // });
+        this.callDetector = new CallDetector("phone-connect",(event)=>{
+            this.setState({
+                log: [...this.state.log, event]
+            });
+            if(event == "Connected"){
+                Vibration.vibrate();
+            }
+            // const stateMap = {
+            //     "Connected": () => {
+            //         console.log("Connected");
+            //         Vibration.vibrate(1000);
+            //     },
+            //     "Dialing": () => {
+            //         console.log("Dialing");
+            //     },
+            //     "Disconnected": () => {
+            //         console.log("Disconnected");
+            //     },
+            //     "Incoming": () => {
+            //         console.log("Incoming");
+            //     }
+            // }
+            // stateMap[event]();
+        });
     }
 
 
     componentWillUnmount() {
-        // CallDetectionManager && CallDetectionManager.stopListener();
-        // if (this.eventObj) {
-        //     this.eventObj.removeAllListeners('PhoneCallStateUpdate');
-        //     this.eventObj = undefined
-        // }
+        this.callDetector && this.callDetector.dispose();
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <Text style={this.state.connected && styles.connected}>
-                    {this.state.log.toString()}
-                </Text>
+                <ListView
+                style={styles.list}
+                    dataSource={this.ds.cloneWithRows([...this.state.log])}
+                    renderRow={(rowData) => <Text>{rowData}</Text>}
+                />
+                <Button title="Vibrate Me" onPress={()=>{Vibration.vibrate()}}/>
             </View>
         );
     }
@@ -59,6 +76,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
+    },
+    list: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
     },
     connected: {
         color: "green"
