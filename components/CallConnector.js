@@ -9,7 +9,9 @@ import {
   Vibration,
   Button
 } from "react-native";
+import PushNotification from "react-native-push-notification";
 
+import PushNotificationController from "./pushNotifications/NotificationController";
 import CallDetector from "react-native-call-detector";
 
 export default class CallConnector extends Component {
@@ -37,6 +39,18 @@ export default class CallConnector extends Component {
     this.callDetector && this.callDetector.dispose();
   }
 
+  _createNotification() {
+    let date = new Date(Date.now() + (5 * 1000));
+    this.setState({
+      log: [...this.state.log , date.toISOString()]
+    })
+    
+    PushNotification.localNotificationSchedule({
+      message: "Call Connected",
+      date: date
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -46,11 +60,16 @@ export default class CallConnector extends Component {
           renderRow={rowData => <Text>{rowData}</Text>}
         />
         <Button
+          title="Create Notifications"
+          onPress={this._createNotification.bind(this)}
+        />
+        <Button
           title="Vibrate Me"
           onPress={() => {
             Vibration.vibrate();
           }}
         />
+        < PushNotificationController/>
       </View>
     );
   }

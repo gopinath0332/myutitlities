@@ -7,9 +7,11 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"moment": "^2.19.2",
 		"react": "16.0.0",
 		"react-native": "0.50.3",
-		"react-native-call-detector": "^0.2.0"
+		"react-native-call-detector": "^0.2.0",
+		"react-native-push-notification": "^3.0.1"
 	},
 	"devDependencies": {
 		"babel-jest": "21.2.0",

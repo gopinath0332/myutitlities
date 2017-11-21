@@ -38,6 +38,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		B7B1848D59EF44CBA905AB94 /* libRCTCallDetector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E09EE00407A4A3FB6D51D66 /* libRCTCallDetector.a */; };
+		D71F67F51FC33C7D009BB080 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71F67DA1FC33C3D009BB080 /* libRCTPushNotification.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -286,6 +287,20 @@
 			remoteGlobalIDString = 9C51A90D1E655E5D0051117F;
 			remoteInfo = RCTCallDetector;
 		};
+		D71F67D91FC33C3D009BB080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D71F67C71FC33C3D009BB080 /* RCTPushNotification.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTPushNotification;
+		};
+		D71F67DB1FC33C3D009BB080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D71F67C71FC33C3D009BB080 /* RCTPushNotification.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D05745F1DE6004600184BB4;
+			remoteInfo = "RCTPushNotification-tvOS";
+		};
 		D75F9F761FC1B787002B4F76 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */;
@@ -337,6 +352,7 @@
 		7E09EE00407A4A3FB6D51D66 /* libRCTCallDetector.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTCallDetector.a; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		D71F67C71FC33C3D009BB080 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,6 +368,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71F67F51FC33C7D009BB080 /* libRCTPushNotification.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -529,6 +546,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				D71F67C71FC33C3D009BB080 /* RCTPushNotification.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -563,6 +581,7 @@
 				00E356EF1AD99517003FC87E /* myutilitiesTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				D70880EB1FC1D94D0007D25C /* Recovered References */,
+				D71F67F41FC33C7D009BB080 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -603,6 +622,22 @@
 				D708811F1FC1D94F0007D25C /* libRCTCallDetector.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D71F67C81FC33C3D009BB080 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D71F67DA1FC33C3D009BB080 /* libRCTPushNotification.a */,
+				D71F67DC1FC33C3D009BB080 /* libRCTPushNotification-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D71F67F41FC33C7D009BB080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -750,6 +785,10 @@
 				{
 					ProductGroup = 00C302D41ABCB9D200DB3ED1 /* Products */;
 					ProjectRef = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
+				},
+				{
+					ProductGroup = D71F67C81FC33C3D009BB080 /* Products */;
+					ProjectRef = D71F67C71FC33C3D009BB080 /* RCTPushNotification.xcodeproj */;
 				},
 				{
 					ProductGroup = 139105B71AF99BAD00B5F7CC /* Products */;
@@ -1014,6 +1053,20 @@
 			remoteRef = D708811E1FC1D94F0007D25C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		D71F67DA1FC33C3D009BB080 /* libRCTPushNotification.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTPushNotification.a;
+			remoteRef = D71F67D91FC33C3D009BB080 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D71F67DC1FC33C3D009BB080 /* libRCTPushNotification-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTPushNotification-tvOS.a";
+			remoteRef = D71F67DB1FC33C3D009BB080 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		D75F9F771FC1B787002B4F76 /* libRCTBlob-tvOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1228,7 +1281,7 @@
 				DEVELOPMENT_TEAM = Y5GWD5L4RD;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-call-detector/ios/RCTCallDetector/RCTCallDetector",
+					"$(SRCROOT)/../node_modules/react-native/Libraries/PushNotificationIOS/**",
 				);
 				INFOPLIST_FILE = myutilities/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1251,7 +1304,7 @@
 				DEVELOPMENT_TEAM = Y5GWD5L4RD;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-call-detector/ios/RCTCallDetector/RCTCallDetector",
+					"$(SRCROOT)/../node_modules/react-native/Libraries/PushNotificationIOS/**",
 				);
 				INFOPLIST_FILE = myutilities/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
