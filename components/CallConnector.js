@@ -31,6 +31,7 @@ export default class CallConnector extends Component {
       });
       if (event == "Connected") {
         Vibration.vibrate();
+        this._createNotification();
       }
     });
   }
@@ -40,7 +41,7 @@ export default class CallConnector extends Component {
   }
 
   _createNotification() {
-    let date = new Date(Date.now() + (5 * 1000));
+    let date = new Date(Date.now() + (1 * 1000));
     this.setState({
       log: [...this.state.log , date.toISOString()]
     })
@@ -60,7 +61,7 @@ export default class CallConnector extends Component {
           renderRow={rowData => <Text>{rowData}</Text>}
         />
         <Button
-          title="Create Notifications"
+          title="Enable phone connect"
           onPress={this._createNotification.bind(this)}
         />
         <Button
