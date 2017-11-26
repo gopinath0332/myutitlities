@@ -84,9 +84,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5FCFF"
   },
   list: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    flex: 1
   },
   connected: {
     color: "green"
