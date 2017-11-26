@@ -1,5 +1,5 @@
 export default {
-    container: {
+    container : {
         flex: 1,
         justifyContent: "center",
         alignItems: "center"

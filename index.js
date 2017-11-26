@@ -1,5 +1,5 @@
 import { AppRegistry } from "react-native";
 import App from "./App";
-import Home from "./components/home/Home";
+import Navigator from "./components/home/Navigator";
 
-AppRegistry.registerComponent("myutilities", () => Home);
+AppRegistry.registerComponent("myutilities", () => Navigator);
