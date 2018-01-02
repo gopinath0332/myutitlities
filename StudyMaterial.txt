@@ -5,3 +5,4 @@ Study Materials:
 
 2. Javascript design pattern
     https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know
+    https://addyosmani.com/resources/essentialjsdesignpatterns/book/#designpatternsjavascript
