@@ -1,4 +1,7 @@
 Study Materials: 
 
 1. TypeScript: 
-https://www.youtube.com/watch?v=p7qa8N8TvqI&list=PLYxzS__5yYQkX-95LHG5EDxPj3tVvVmRd&index=2 
+    https://www.youtube.com/watch?v=p7qa8N8TvqI&list=PLYxzS__5yYQkX-95LHG5EDxPj3tVvVmRd&index=2 
+
+2. Javascript design pattern
+    https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know
